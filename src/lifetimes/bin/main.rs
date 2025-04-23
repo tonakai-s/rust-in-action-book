@@ -3,11 +3,7 @@ fn add_with_lifetimes<'a, 'b>(x: &'a i32, y: &'b i32) -> i32 {
 }
 
 fn longer_string<'a>(a: &'a str, b: &'a str) -> &'a str {
-    if a.len() > b.len() {
-        a
-    } else {
-        b
-    }
+    if a.len() > b.len() { a } else { b }
 }
 
 // These annotations are not required, the compiler can infer it
@@ -17,13 +13,13 @@ fn first_word<'a>(phrase: &'a str) -> &'a str {
         if ch == ' ' {
             break;
         }
-        i+=1;
+        i += 1;
     }
     &phrase[0..i]
 }
 
 struct Book<'a> {
-    title: &'a str
+    title: &'a str,
 }
 impl<'a> Book<'a> {
     fn title(&self) -> &str {
@@ -34,7 +30,10 @@ impl<'a> Book<'a> {
 fn main() {
     println!("Lifetimes!");
     println!("Add with lifetimes: {}", add_with_lifetimes(&10, &25));
-    println!("Longer string: {}", longer_string(&String::from("Foo"), &String::from("Barz")));
+    println!(
+        "Longer string: {}",
+        longer_string(&String::from("Foo"), &String::from("Barz"))
+    );
     let phrase = String::from("Ok, it's comprehensive");
     println!("First word in '{}' is '{}'", phrase, first_word(&phrase));
 

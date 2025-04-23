@@ -10,5 +10,8 @@ fn main() {
     // Add f64
     println!("Add 5.5 + 5.5: {}", add(5.5, 5.5));
     // Add Durantion(60) + Duration(35)
-    println!("Add 60 seconds + 35 seconds: {:?}", add(Duration::from_secs(60), Duration::from_secs(35)));
+    println!(
+        "Add 60 seconds + 35 seconds: {:?}",
+        add(Duration::from_secs(60), Duration::from_secs(35))
+    );
 }
