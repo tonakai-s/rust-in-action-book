@@ -13,3 +13,7 @@ path="src/mandelbrot/bin/main.rs"
 [[bin]]
 name="lifetimes"
 path="src/lifetimes/bin/main.rs"
+
+[[bin]]
+name="trait-bounds"
+path="src/trait-bounds/bin/main.rs"
