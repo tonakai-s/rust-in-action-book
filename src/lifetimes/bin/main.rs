@@ -1,12 +1,15 @@
+#[allow(clippy::needless_lifetimes)]
 fn add_with_lifetimes<'a, 'b>(x: &'a i32, y: &'b i32) -> i32 {
     *x + *y
 }
 
+#[allow(clippy::needless_lifetimes)]
 fn longer_string<'a>(a: &'a str, b: &'a str) -> &'a str {
     if a.len() > b.len() { a } else { b }
 }
 
 // These annotations are not required, the compiler can infer it
+#[allow(clippy::needless_lifetimes)]
 fn first_word<'a>(phrase: &'a str) -> &'a str {
     let mut i = 0;
     for ch in phrase.chars() {
@@ -21,7 +24,8 @@ fn first_word<'a>(phrase: &'a str) -> &'a str {
 struct Book<'a> {
     title: &'a str,
 }
-impl<'a> Book<'a> {
+// Lifetime inferation
+impl Book<'_> {
     fn title(&self) -> &str {
         self.title
     }
