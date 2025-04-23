@@ -1,0 +1,15 @@
+[package]
+name = "rust-in-action-book"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+num = "0.4.3"
+
+[[bin]]
+name="mandelbrot"
+path="src/mandelbrot/bin/main.rs"
+
+[[bin]]
+name="lifetimes"
+path="src/lifetimes/bin/main.rs"
